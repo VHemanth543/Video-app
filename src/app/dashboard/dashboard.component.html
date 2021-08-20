@@ -1,0 +1,65 @@
+
+<div class="grid-container">
+    <div class="grid-item1" style="border-radius: 15px;">
+        <p style="padding: 0px; font-size: 32px; height: 10px;">Play List</p>
+        <kendo-treeview style=" color: white; font-size: 20px;"
+        [nodes]="data"
+        textField="name"
+        [hasChildren]="hasChildren"
+         [children]="fetchChildren"
+        kendoTreeViewExpandable
+        [expandedKeys]="expandedKeys"
+        kendoTreeViewSelectable
+        kendoTreeViewHierarchyBinding
+        childrenField="items"
+        [selectBy]="'source'"
+        [(selectedKeys)]="selectedKeys"
+        
+        
+       
+    ></kendo-treeview>
+    </div>
+    <div class="grid-container1">
+       <div style="padding-top: 50px;">
+        <video id="my_video_1" style="padding: 0px;"  class="video" [src]="selectedKeys" controls="False" ></video>
+    
+       </div>
+       <div style="padding-top: 200px;">
+        <p style="align-self: center; font-size: 26px; color: darkgreen;">SKIP{{this.Val}}</p>
+         <div class="grid-container2">
+            
+            <div>
+                <button (click)="skip(10)" kendoButton>skip</button>
+            </div>
+            <div>
+                <button kendoButton (click)="skip2x(20)">skip 2X</button>
+            </div>
+            <div>
+                <button kendoButton (click)="skip3x(30)">skip 3x</button>
+            </div>
+            <div>
+                <button kendoButton (click)="skip4x(40)">skip 4x</button>
+            </div>
+        </div>
+       </div>
+       <div style="display: grid;grid-template-columns: auto auto auto; border-radius: 5px; background-color: blue; height: 50px; align-items: center; width: 500px; padding-left: 30px;">
+        <div>
+            <button kendoButton (click)="play()" icon="play"></button>
+        </div>
+        <div>
+            <button kendoButton (click)="pause()" icon="pause"></button>
+        </div>
+        <div>
+            <button  kendoButton icon="volume" (click)="mute()" style="width: 50px; padding: 0px;">
+                <img id="image" src="../../assets/download1.png" style="width: 30px; height: 30px; padding-left: 0px; align-items: center;"/>
+                
+            </button>
+            <input  type="range" min="0" max="10" value="2" class="slider" id="myRange" >
+            
+        </div>
+        </div>
+        
+    </div>
+  
+    
+</div>
