@@ -198,7 +198,8 @@ export class DashboardComponent implements OnInit {
 
    }
   ngOnInit(): void {
-   
+   let dummy_item = ""
+   console.log(this.data)
   }
 
 
